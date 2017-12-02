@@ -123,3 +123,6 @@ class Url {
     return this.string;
   }
 }
+
+if(typeof module !== 'object' || module === null) module = {};
+module.exports = Parameters;

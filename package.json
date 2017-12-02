@@ -1,0 +1,29 @@
+{
+  "name": "open-url-js",
+  "version": "1.0.0",
+  "description": "Simply manage urls.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "doc": "jsdoc2md index.js --template README.hbs --partial partials/*.hbs > README.md",
+    "commit": "npm run doc;git add .;git commit;git push",
+    "release": "npm run commit;npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/juliendargelos/open-url-js"
+  },
+  "keywords": [
+    "url",
+    "uri"
+  ],
+  "author": "Julien Dargelos",
+  "license": "MIT",
+  "dependencies": {
+    "parameters-js": "^1.0.10",
+    "pathname-js": "^1.0.1"
+  },
+  "devDependencies": {
+    "jsdoc-to-markdown": "^3.0.2"
+  }
+}

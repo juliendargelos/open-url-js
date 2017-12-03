@@ -11,6 +11,8 @@ npm install open-url-js
 ## Usage
 
 ```javascript
+var Url = require('open-url-js');
+
 var url = new Url('https://www.myapp.com:3000/users/:id/#profile?user[lang]=fr');
 url;
 // => Url {

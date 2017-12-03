@@ -40,7 +40,6 @@ class Url {
 
   set string(v) {
     var match = (v + '').match(/^(?:([^:]*):\/\/)?([^\/\?#]*)([^\?#]*)(?:#([^?]*))?(?:\?(.*))?$/);
-    console.log(match);
 
     if(match === null) match = [];
 

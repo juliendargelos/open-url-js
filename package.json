@@ -20,8 +20,8 @@
   "author": "Julien Dargelos",
   "license": "MIT",
   "dependencies": {
-    "parameters-js": "^1.0.11",
-    "pathname-js": "^1.0.2"
+    "parameters-js": "^1.0.12",
+    "pathname-js": "^1.0.4"
   },
   "devDependencies": {
     "jsdoc-to-markdown": "^3.0.2"

@@ -1,4 +1,4 @@
-if('require' in this) {
+if(typeof require === 'function') {
   var Pathname = require('pathname-js');
   var parameters = require('parameters-js');
 }
@@ -120,4 +120,4 @@ class Url {
   }
 }
 
-if('module' in this) module.exports = Url;
+if(typeof module === 'object' && module !== null) module.exports = Url;

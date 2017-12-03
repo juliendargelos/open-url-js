@@ -1,6 +1,6 @@
 {
   "name": "open-url-js",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "Simply manage urls.",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "parameters-js": "^1.0.18",
-    "pathname-js": "^1.0.9"
+    "pathname-js": "^1.0.10"
   },
   "devDependencies": {
     "jsdoc-to-markdown": "^3.0.2"

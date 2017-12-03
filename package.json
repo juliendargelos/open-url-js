@@ -1,11 +1,11 @@
 {
   "name": "open-url-js",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Simply manage urls.",
   "main": "index.js",
   "scripts": {
     "test": "node ./test.js",
-    "build": "browserify index.js > dist/open-url.js",
+    "build": "node build.js",
     "doc": "jsdoc2md index.js --template README.hbs --partial partials/*.hbs > README.md",
     "commit": "npm run doc;git add .;git commit;git push",
     "release": "npm run commit;npm publish"
@@ -21,8 +21,8 @@
   "author": "Julien Dargelos",
   "license": "MIT",
   "dependencies": {
-    "parameters-js": "^1.0.14",
-    "pathname-js": "^1.0.5"
+    "parameters-js": "^1.0.15",
+    "pathname-js": "^1.0.6"
   },
   "devDependencies": {
     "browserify": "^14.5.0",

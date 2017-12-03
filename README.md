@@ -11,6 +11,31 @@ npm install open-url-js
 ## Usage
 
 ```javascript
+var url = new Url('https://www.myapp.com:3000/users/:id/#profile?user[lang]=fr');
+url;
+// => Url {
+//      protocol: 'https',
+//      host: 'www.myapp.com',
+//      port: 3000,
+//      path: Pathname ['users', ':id', root: true],
+//      hash: 'profile',
+//      parameters: Parameters {
+//        user: Parameters {
+//          lang: fr
+//        }
+//      }
+//    }
+
+url.id = 4;
+url.string;
+// => 'https://www.myapp.com:3000/users/4/#profile?user[lang]=fr';
+
+url.parameters = {
+  lang: 'en',
+  zone: 'United States'
+};
+url.string;
+// => 'https://www.myapp.com:3000/users/4/#profile?lang=fr&zone=United%20States';
 ```
 
 <a name="Url"></a>
@@ -23,9 +48,11 @@ npm install open-url-js
     * [.string](#Url+string) : <code>string</code>
     * [.protocol](#Url+protocol) : <code>string</code>
     * [.host](#Url+host) : <code>string</code>
+    * [.port](#Url+port) : <code>string</code>
     * [.hash](#Url+hash) : <code>string</code>
     * [.path](#Url+path) : <code>Pathname</code>
     * [.parameters](#Url+parameters) : <code>Parameters</code>
+    * [.clear()](#Url+clear) ⇒ [<code>Url</code>](#Url)
     * [.toString()](#Url+toString) ⇒ <code>string</code>
 
 <a name="new_Url_new"></a>
@@ -56,6 +83,12 @@ The protocol of the url.
 The host of the url.
 
 **Kind**: instance property of [<code>Url</code>](#Url)  
+<a name="Url+port"></a>
+
+### url.port : <code>string</code>
+The port of the url.
+
+**Kind**: instance property of [<code>Url</code>](#Url)  
 <a name="Url+hash"></a>
 
 ### url.hash : <code>string</code>
@@ -74,6 +107,13 @@ The path of the url.
 The parameters of the url.
 
 **Kind**: instance property of [<code>Url</code>](#Url)  
+<a name="Url+clear"></a>
+
+### url.clear() ⇒ [<code>Url</code>](#Url)
+Clears the url.
+
+**Kind**: instance method of [<code>Url</code>](#Url)  
+**Returns**: [<code>Url</code>](#Url) - Itself.  
 <a name="Url+toString"></a>
 
 ### url.toString() ⇒ <code>string</code>

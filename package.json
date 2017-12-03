@@ -1,12 +1,12 @@
 {
   "name": "open-url-js",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Simply manage urls.",
   "main": "index.js",
   "scripts": {
     "test": "node ./test.js",
     "build": "node build.js",
-    "doc": "npm run build;jsdoc2md index.js --template README.hbs --partial partials/*.hbs > README.md",
+    "doc": "npm run build;jsdoc2md dist/open-url.js --template README.hbs --partial partials/*.hbs > README.md",
     "commit": "npm run doc;git add .;git commit;git push",
     "release": "npm run commit;npm publish"
   },

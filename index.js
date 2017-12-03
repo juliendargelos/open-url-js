@@ -1,3 +1,8 @@
+if('require' in this) {
+  var Pathname = require('pathname-js');
+  var parameters = require('parameters-js');
+}
+
 class Url {
   static empty(value) {
     return [undefined, null].includes(value);
@@ -8,15 +13,6 @@ class Url {
    * @param {...{(string)}} string Same value as {@link Url#string}.
    */
   constructor(string) {
-    try {
-      if(typeof require !== 'function') require = function() {};
-    }
-    catch(e) {
-      var require = function() {};
-    }
-    if(!Pathname) Pathname = require('pathname-js');
-    if(!Parameters) Parameters = require('parameters-js');
-
     this._protocol = '';
     this._host = '';
     this._hash = '';
@@ -124,5 +120,4 @@ class Url {
   }
 }
 
-if(typeof module !== 'object' || module === null) module = {};
-module.exports = Url;
+if('module' in this) module.exports = Url;

@@ -1,6 +1,6 @@
 if(typeof require === 'function') {
   var Pathname = require('pathname-js');
-  var parameters = require('parameters-js');
+  var Parameters = require('parameters-js');
 }
 
 class Url {
@@ -119,5 +119,7 @@ class Url {
     return this.string;
   }
 }
+
+var url = new Url();
 
 if(typeof module === 'object' && module !== null) module.exports = Url;

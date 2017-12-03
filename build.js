@@ -12,4 +12,4 @@ var clean = function(file, destination) {
   });
 };
 
-clean('index.js', 'open-url.js');
+clean('index.js', 'dist/open-url.js');

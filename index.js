@@ -1,9 +1,7 @@
-if(typeof require === 'function') {
-  var Pathname = require('pathname-js');
-  var Parameters = require('parameters-js');
-}
+var Pathname = require('pathname-js');
+var Parameters = require('parameters-js');
 
-class Url {
+module.exports = class Url {
   static empty(value) {
     return [undefined, null].includes(value);
   }
@@ -140,5 +138,3 @@ class Url {
     return this.string;
   }
 }
-
-if(typeof module === 'object' && module !== null) module.exports = Url;

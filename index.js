@@ -13,9 +13,7 @@ class Url {
    * @param {...{(string)}} string Same value as {@link Url#string}.
    */
   constructor(string) {
-    this._protocol = '';
-    this._host = '';
-    this._hash = '';
+    this._protocol = this._host = this._port = this._hash = '';
     this._path = new Pathname();
     this._parameters = new Parameters();
 
@@ -30,7 +28,8 @@ class Url {
     return (
       (this.protocol ? this.protocol + ':' : '') +
       (this.host ? '//' + this.host : '') +
-      (this.host && !this.path.root ? '/' : '') +
+      (this.port ? ':' + this.port : '') +
+      (!this.path.root && (this.host || this.port) ? '/' : '') +
        this.path +
       (this.path.length !== 0 && (this.hash || this.parameters.any) ? '/' : '') +
       (this.hash ? '#' + this.hash : '') +
@@ -39,20 +38,21 @@ class Url {
   }
 
   set string(v) {
-    var match = (v + '').match(/^(?:([^:]*):\/\/)?([^\/\?#]*)([^\?#]*)(?:#([^?]*))?(?:\?(.*))?$/);
+    var match = (v + '').match(/^(?:([^:\/]+):)?(?:\/\/([^\/\?#:]+))?(?::(\d+))?([^\?#]*)(?:#([^?]*))?(?:\?(.*))?$/);
 
     if(match === null) match = [];
 
     this.protocol = match[1];
     this.host = match[2];
-    this.hash = match[3];
+    this.port = match[3];
     this.path = match[4];
-    this.parameters = match[5];
+    this.hash = match[5];
+    this.parameters = match[6];
   }
 
   /**
    * The protocol of the url.
-   * @type {string?}
+   * @type {string}
    */
   get protocol() {
     return this._protocol;
@@ -64,7 +64,7 @@ class Url {
 
   /**
    * The host of the url.
-   * @type {string?}
+   * @type {string}
    */
   get host() {
     return this._host;
@@ -75,8 +75,21 @@ class Url {
   }
 
   /**
+   * The port of the url.
+   * @type {string}
+   */
+  get port() {
+    return this._port;
+  }
+
+  set port(v) {
+    v = parseInt(v);
+    this._port = isNaN(v) ? '' : v;
+  }
+
+  /**
    * The hash of the url.
-   * @type {string?}
+   * @type {string}
    */
   get hash() {
     return this._hash;
@@ -112,13 +125,19 @@ class Url {
   }
 
   /**
+   * Clears the url.
+   * @returns {Url} Itself.
+   */
+  clear() {
+    this.protocol = this.host = this.port = this.hash = this.path = this.parameters = null;
+  }
+
+  /**
    * @returns {string} Value of {@link Url#string}.
    */
   toString() {
     return this.string;
   }
 }
-
-var url = new Url();
 
 if(typeof module === 'object' && module !== null) module.exports = Url;

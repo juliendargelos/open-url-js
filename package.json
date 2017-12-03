@@ -1,10 +1,10 @@
 {
   "name": "open-url-js",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Simply manage urls.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node ./test.js",
     "doc": "jsdoc2md index.js --template README.hbs --partial partials/*.hbs > README.md",
     "commit": "npm run doc;git add .;git commit;git push",
     "release": "npm run commit;npm publish"

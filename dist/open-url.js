@@ -1,6 +1,3 @@
-var Pathname = require('pathname-js');
-var Parameters = require('parameters-js');
-
 class Url {
   static empty(value) {
     return [undefined, null].includes(value);

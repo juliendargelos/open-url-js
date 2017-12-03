@@ -1,6 +1,6 @@
 {
   "name": "open-url-js",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Simply manage urls.",
   "main": "index.js",
   "scripts": {

@@ -108,7 +108,8 @@ class Url {
   }
 
   set path(v) {
-    this.path.clear().concat(this.constructor.empty(v) ? '' : v);
+    if(v instanceof Pathname) this._path = v;
+    else this._path.clear().concat(this.constructor.empty(v) ? '' : v);
   }
 
   /**
@@ -120,8 +121,9 @@ class Url {
   }
 
   set parameters(v) {
-    if(typeof v === 'string') this.parameters.string = this.constructor.empty(v) ? '' : v;
-    else this.parameters.clear().set(v);
+    if(v instanceof Parameters) this._parameters = v;
+    if(typeof v === 'string') this._parameters.string = this.constructor.empty(v) ? '' : v;
+    else this._parameters.clear().set(v);
   }
 
   /**

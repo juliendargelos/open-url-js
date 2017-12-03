@@ -13,10 +13,9 @@ class Url {
    * @param {...{(string)}} string Same value as {@link Url#string}.
    */
   constructor(string) {
-    this._protocol = this._host = this._port = this._hash = '';
-    this._path = new Pathname();
-    this._parameters = new Parameters();
-
+    this.protocol = this._host = this._port = this._hash = '';
+    this.path = new Pathname();
+    this.parameters = new Parameters();
     this.string = string;
   }
 

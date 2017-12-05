@@ -1,4 +1,6 @@
 # Open URL JS 🔍
+[![npm version](https://badge.fury.io/js/open-url-js.svg)](https://badge.fury.io/js/open-url-js)
+[![Maintainability](https://api.codeclimate.com/v1/badges/27a140e4e8a692f19938/maintainability)](https://codeclimate.com/github/juliendargelos/open-url-js/maintainability)
 
 Simply manage urls.
 

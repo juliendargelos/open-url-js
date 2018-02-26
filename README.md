@@ -30,7 +30,7 @@ url;
 //      }
 //    }
 
-url.id = 4;
+url.path.id = 4;
 url.string;
 // => 'https://www.myapp.com:3000/users/4/#profile?user[lang]=fr';
 

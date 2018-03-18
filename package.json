@@ -21,7 +21,7 @@
   "author": "Julien Dargelos",
   "license": "MIT",
   "dependencies": {
-    "parameters-js": "^1.0.25",
+    "parameters-js": "^1.0.26",
     "pathname-js": "^1.0.12"
   },
   "devDependencies": {

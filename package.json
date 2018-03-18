@@ -1,6 +1,6 @@
 {
   "name": "open-url-js",
-  "version": "1.0.28",
+  "version": "1.0.29",
   "description": "Simply manage urls.",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   "author": "Julien Dargelos",
   "license": "MIT",
   "dependencies": {
-    "parameters-js": "^1.0.28",
+    "parameters-js": "^1.0.29",
     "pathname-js": "^1.0.12"
   },
   "devDependencies": {
